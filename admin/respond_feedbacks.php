@@ -33,6 +33,7 @@ $feedback = mysqli_fetch_assoc(mysqli_query($conn, "
 <html>
 <head>
     <title>Respond to Feedback</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Respond to Feedback</h2>

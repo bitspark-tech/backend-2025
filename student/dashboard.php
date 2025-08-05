@@ -17,6 +17,7 @@ $result = mysqli_fetch_assoc(mysqli_query($conn, "
 <html>
 <head>
     <title>Student Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Welcome to Student Dashboard</h2>

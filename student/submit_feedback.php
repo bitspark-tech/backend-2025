@@ -33,6 +33,7 @@ $courses = mysqli_query($conn, "
 <html>
 <head>
     <title>Submit Feedback</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Submit Feedback</h2>

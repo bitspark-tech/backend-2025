@@ -23,6 +23,7 @@ $feedbacks = mysqli_query($conn, "
 <html>
 <head>
     <title>My Feedback</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>My Submitted Feedback</h2>

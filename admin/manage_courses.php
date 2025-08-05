@@ -29,6 +29,7 @@ $courses = mysqli_query($conn, "SELECT * FROM courses");
 <html>
 <head>
     <title>Admin - Manage Courses</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Add New Course</h2>

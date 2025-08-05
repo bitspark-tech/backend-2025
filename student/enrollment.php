@@ -43,6 +43,7 @@ $enrolledCourses = mysqli_query($conn, "
 <html>
 <head>
     <title>Enroll in Course</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Enroll in a Course</h2>

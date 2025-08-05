@@ -45,6 +45,7 @@ $students = mysqli_query($conn, "
 <html>
 <head>
     <title>Admin - Manage Students</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Add New Student</h2>

@@ -23,6 +23,7 @@ $feedbacks = mysqli_query($conn, "
 <html>
 <head>
     <title>All Feedbacks</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>All Submitted Feedbacks</h2>
@@ -50,7 +51,7 @@ $feedbacks = mysqli_query($conn, "
             <td><?= $row['restDate'] ?? '---' ?></td>
             <td>
                 <?php if (!$row['response']) { ?>
-                    <a href="respond_feedback.php?fid=<?= $row['fid'] ?>">Respond</a>
+                    <a href="respond_feedbacks.php?fid=<?= $row['fid'] ?>">Respond</a>
                 <?php } else { echo '✔'; } ?>
             </td>
         </tr>
