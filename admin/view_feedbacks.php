@@ -36,7 +36,7 @@ $feedbacks = mysqli_query($conn, "
             <th>Feedback</th>
             <th>Submitted</th>
             <th>Response</th>
-            <th>Responded</th>
+            <th>Response Date</th>
             <th>Action</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($feedbacks)) { ?>
@@ -46,9 +46,9 @@ $feedbacks = mysqli_query($conn, "
             <td><?= $row['courseName'] ?></td>
             <td><?= $row['rating'] ?>/5</td>
             <td><?= $row['feedback'] ?></td>
-            <td><?= $row['feedbackDate'] ?></td>
+            <td><?= date('d M Y H:i A', strtotime($row['feedbackDate'])) ?></td>
             <td><?= $row['response'] ?? '---' ?></td>
-            <td><?= $row['restDate'] ?? '---' ?></td>
+            <td><?= date('d M Y H:i A', strtotime($row['restDate'])) ?? '---' ?></td>
             <td>
                 <?php if (!$row['response']) { ?>
                     <a href="respond_feedbacks.php?fid=<?= $row['fid'] ?>">Respond</a>
