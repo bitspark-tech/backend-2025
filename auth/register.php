@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <!-- HTML: Registration form -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Student Registration</title>
@@ -39,11 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
     <h2>Register as a Student</h2>
+
     <form method="POST" action="">
         First Name: <input type="text" name="firstName" required><br><br>
         Last Name: <input type="text" name="lastName" required><br><br>
-        Email:<input type="email" name="email" required><br><br>
-        Password:<input type="password" name="password" required><br><br>
+        Email: <input type="email" name="email" required><br><br>
+
+        Password: <input type="password" name="password" id="password" required><br><br>
+        Confirm Password: 
+        <input type="password" name="confirm_password" id="confirm_password" required>
+        <span id="match_status" style="margin-left: 10px; font-weight: bold;"></span><br><br>
+
         Gender:
         <select name="gender" required>
             <option value="">-- Select --</option>
@@ -53,6 +59,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <input type="submit" value="Register">
     </form>
+
     <p>Already have an account? <a href="login.php">Login here</a></p>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const password = document.getElementById('password');
+        const confirm = document.getElementById('confirm_password');
+        const status = document.getElementById('match_status');
+
+        function checkMatch() {
+            if (!confirm.value) {
+                status.textContent = "";
+                return;
+            }
+
+            if (password.value === confirm.value) {
+                status.textContent = "✅ Match";
+                status.style.color = "green";
+            } else {
+                status.textContent = "❌ No Match";
+                status.style.color = "red";
+            }
+        }
+
+        password.addEventListener('input', checkMatch);
+        confirm.addEventListener('input', checkMatch);
+    });
+    </script>
 </body>
 </html>
